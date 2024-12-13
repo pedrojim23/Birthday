@@ -1,4 +1,3 @@
-/* BY ENCODEDMABEL */
 
 var w = c.width = window.innerWidth,
 		h = c.height = window.innerHeight,
@@ -8,7 +7,7 @@ var w = c.width = window.innerWidth,
 		hh = h / 2,
 		
 		opts = {
-			strings: [ 'FELIZ', 'CUMPLEAÑOS', ' AMOR!' ],
+			strings: [ 'FELIZ', 'CUMPLEAÑOS', ' PARA TI!' ],
 			charSize: 30,
 			charSpacing: 35,
 			lineHeight: 40,
