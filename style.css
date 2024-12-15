@@ -1,5 +1,5 @@
 body {
-  background-color: #ffe5ec;
+  background-color: #111;
 }
 
 .candle-count-display {
@@ -17,7 +17,7 @@ body {
   width: fit-content;
   margin-left: auto;
   margin-right: auto;
-  border: 2px solid #111;
+  border: 2px solid #ffc2d1;
 }
 
 .candle-count-display span {
