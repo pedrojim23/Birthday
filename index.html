@@ -1,37 +1,106 @@
 <!DOCTYPE html>
-<html lang="en" >
+<html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>Birthday!</title>
   <link rel="stylesheet" href="./style2.css">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
   <style>
     .navigation-btn {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
+      position: absolute;
+      top: 90%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      width: auto;
+      z-index: 1000;
+      display: inline-block;
       background-color: #4CAF50;
       color: white;
-      padding: 10px 20px;
+      padding: 6px 12px;
       text-decoration: none;
-      border-radius: 5px;
-      font-family: Arial, sans-serif;
-      z-index: 1000;
+      border-radius: 8px;
+      font-size: 14px;
+      transition: background-color 0.3s ease;
     }
+
     .navigation-btn:hover {
       background-color: #45a049;
     }
-  </style>
 
+    #popup-overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.5);
+      z-index: 1500;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #popup-container {
+      background-color: white;
+      padding: 30px;
+      border-radius: 10px;
+      text-align: center;
+      max-width: 500px;
+      width: 90%;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+
+    #popup-continue {
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      margin-top: 20px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    #popup-continue:hover {
+      background-color: #45a049;
+    }
+  </style>
 </head>
+
 <body>
 
-<canvas id=c></canvas>
-<p>Con mucho amor <span>,: Pedro Jiménez </span></p>
-<a href="index2.html" class="navigation-btn">Haz click aquí 🎂</a>
+  <canvas id=c></canvas>
+  <p>Con mucho amor<span>: Pedro Jiménez </span></p>
+  <a href="#" class="navigation-btn" id="popup-trigger">Haz click aquí 🎂</a>
 
-  <script  src="./script2.js"></script>
+  <div id="popup-overlay">
+    <div id="popup-container">
+      <h2>¡Instrucciones!</h2>
+      <li>Estás por entrar a una sorpresa especial preparada con mucho amor. En la siguiente página encontrarás una experiencia dedicada para ti.</li>
+      <ul>
+        <li>Si el navegador te pide tener acceso al micrófono dáselo(no es nada malo)</li>
+        <li>Asegúrate de tener el volumen encendido</li>
+        <li>Al pastel, tú le pondras cuantas velas quieras</li>
+        <li>Una vez que hayas terminado de ponerlas, sopla fuerte al dispositivo donde estes para que el micrófono detecte el sonido</li>
+        <li>Por último, tómate tu tiempo para disfrutar</li>
+      </ul>
+      <button id="popup-continue">Continuar</button>
+    </div>
+  </div>
 
+  <script src="./script2.js"></script>
+  <script>
+    document.getElementById('popup-trigger').addEventListener('click', function(e) {
+      e.preventDefault();
+      document.getElementById('popup-overlay').style.display = 'flex';
+    });
+
+    document.getElementById('popup-continue').addEventListener('click', function() {
+      window.location.href = 'index2.html';
+    });
+  </script>
 </body>
 
 </html>
